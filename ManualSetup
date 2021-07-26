@@ -1,0 +1,17 @@
+#!/usr/bin/ruby
+
+# list chrome extensions
+require_relative 'manual/chrome.rb'
+
+# list AppStore apps
+require_relative 'manual/app_store.rb'
+
+# list Misc tasks
+require_relative 'manual/misc.rb'
+
+# list apps to download
+require_relative 'manual/downloads.rb'
+
+# Download DoD certs
+require_relative 'manual/dod_certs.rb'
+

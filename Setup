@@ -1,0 +1,53 @@
+#!/usr/bin/ruby
+puts
+puts
+
+# store Screenshots
+puts "make screenshots folder"
+system "mkdir -p ~/Desktop/Screenshots"
+system "defaults write com.apple.screencapture location ~/Desktop/Screenshots"
+
+# show path in Finder
+puts "Show Path bar in Finder"
+system "defaults write com.apple.finder ShowPathbar -bool true"
+
+# show status bar in Finder
+puts "Show Status bar in Finder"
+system "defaults write com.apple.finder ShowStatusBar -bool true"
+
+# show batter percentage
+puts "Show percentage in battery status"
+system 'defaults write com.apple.menuextra.battery ShowPercent -string "YES"'
+system 'defaults write com.apple.menuextra.battery ShowTime -string "NO"'
+
+# hide Dock automatically
+puts "Hide dock automatically"
+system "defaults write com.apple.dock autohide -boolean true"
+
+# show filename extensions
+puts "Show all filename extensions in Finder"
+system "defaults write NSGlobalDomain AppleShowAllExtensions -bool true"
+
+# show hidden files
+puts "Show hidden files in Finder"
+# system "defaults write NSGlobalDomain AppleShowAllExtensions -bool true"
+system "defaults write com.apple.finder AppleShowAllFiles YES"
+
+# require password after sleep/screensaver
+puts "Require password after a minute after sleep or screen saver begins"
+system "defaults write com.apple.screensaver askForPassword -int 1"
+system "defaults write com.apple.screensaver askForPasswordDelay -int 60"
+
+# enable tap to click
+puts "Enable tap to click (Trackpad)"
+system "defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true"
+system "defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1"
+system "defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1"
+
+# tab access to buttons
+puts "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
+system "defaults write NSGlobalDomain AppleKeyboardUIMode -int 3"
+
+puts
+puts "restart computer so changes will take effect"
+puts
