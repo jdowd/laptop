@@ -51,7 +51,7 @@ kegs = [
          'caskroom/cask/brew-cask',
          'gpg',
          'hub',
-         'ruby-install',
+         'asdf',
          'chruby',
          'imagemagick',
          'ghostscript',
@@ -89,4 +89,9 @@ puts
 puts "Finished brewing"
 puts
 
+puts "Get asdf pluglins"
+%w[
+  nodejs
+  ruby
+].each { |pkg| run_cmd "asdf plugin add #{pkg}" }
 puts "change shell to zsh with `chsh -s /bin/zsh`"
